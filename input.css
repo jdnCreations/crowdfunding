@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body, * {
+    font-family: 'Commissioner', sans-serif;
+    font-size: 1rem;
+    @apply text-text;
+}
+
+header {
+    background-image: url('./images/image-hero-mobile.jpg');
+}
+
+.btn-default {
+    @apply bg-primary;
+    @apply text-white;
+    @apply font-medium;
+    @apply rounded-full;
+    @apply px-8;
+    @apply py-3;
+}
+
+.disabled {
+    @apply bg-text;
+    cursor: default;
+}

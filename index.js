@@ -8,28 +8,36 @@ const bars = hamburger.querySelectorAll('span');
 const bookmarkBtn = document.getElementById('bookmark-btn');
 const bookmarkText = bookmarkBtn.querySelector('p');
 const bookmarkSvg = bookmarkBtn.querySelector('svg');
+const circle = bookmarkBtn.querySelector('g>circle');
+
+const totalFunded = document.getElementById('total');
 
 const primaryColor = "hsl(176, 50%, 47%)";
 const accentColor = "hsl(176, 72%, 28%)";
 
+let backers = 5007;
+
 bookmarkBtn.addEventListener('click', () => {
   if (bookmarkBtn.getAttribute('data-bookmarked') === 'true') {
-    console.log('bookmarked already.')
+    bookmarkBtn.setAttribute('data-bookmarked', 'false');
+    circle.classList.remove('fill-accent');
+    circle.classList.add('fill-[#2f2f2f]')
+    bookmarkBtn.querySelector('g>path').setAttribute('fill', '#B1B1B1');
+    bookmarkBtn.classList.remove('text-accent');
+    bookmarkBtn.classList.add('text-text');
+    bookmarkText.innerHTML = "Bookmark";
     return;
   }
 
   bookmarkBtn.setAttribute('data-bookmarked', 'true');
-
   // change svg circle color
-  bookmarkBtn.querySelector('g>circle').setAttribute('fill', accentColor);
+  circle.classList.remove('fill-[#2f2f2f]');
+  circle.classList.add('fill-accent');
 
   // change svg bookmark color
   bookmarkBtn.querySelector('g>path').setAttribute('fill', '#FFF');
-
   // change button text color
-  // bookmarkBtn.classList.remove('text-text');
-  bookmarkBtn.style.color = accentColor;
-  
+  bookmarkBtn.classList.add('text-accent');
   // change text to 'bookmarked'
   bookmarkText.innerHTML = 'Bookmarked';
 })

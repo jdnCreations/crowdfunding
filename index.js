@@ -11,8 +11,6 @@ hamburger.addEventListener('click', () => {
     cover.classList.toggle('hidden');
     navMenu.classList.toggle('-left-[calc(100%+2.5rem)]')
 
-    console.log(bars.length);
-
     // navContainer.classList.toggle('fixed');
     for (let i = 0; i < bars.length; i++) {
         if (i === 0) {

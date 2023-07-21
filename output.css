@@ -572,6 +572,14 @@ video {
   top: 80px;
 }
 
+.right-0{
+  right: 0px;
+}
+
+.left-auto{
+  left: auto;
+}
+
 .z-10{
   z-index: 10;
 }
@@ -947,8 +955,37 @@ body, * {
 }
 
 @media (min-width: 768px){
+  .md\:static{
+    position: static;
+  }
+
   .md\:relative{
     position: relative;
+  }
+
+  .md\:left-0{
+    left: 0px;
+  }
+
+  .md\:top-0{
+    top: 0px;
+  }
+
+  .md\:right-0{
+    right: 0px;
+  }
+
+  .md\:left-auto{
+    left: auto;
+  }
+
+  .md\:right-8{
+    right: 2rem;
+  }
+
+  .md\:mx-0{
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .md\:flex{
@@ -957,6 +994,46 @@ body, * {
 
   .md\:hidden{
     display: none;
+  }
+
+  .md\:w-auto{
+    width: auto;
+  }
+
+  .md\:flex-row{
+    flex-direction: row;
+  }
+
+  .md\:items-start{
+    align-items: flex-start;
+  }
+
+  .md\:items-end{
+    align-items: flex-end;
+  }
+
+  .md\:items-center{
+    align-items: center;
+  }
+
+  .md\:justify-normal{
+    justify-content: normal;
+  }
+
+  .md\:justify-between{
+    justify-content: space-between;
+  }
+
+  .md\:justify-evenly{
+    justify-content: space-evenly;
+  }
+
+  .md\:border-none{
+    border-style: none;
+  }
+
+  .md\:bg-transparent{
+    background-color: transparent;
   }
 
   .md\:text-white{
@@ -996,6 +1073,10 @@ body, * {
 
   .lg\:border-r-2{
     border-right-width: 2px;
+  }
+
+  .lg\:border-none{
+    border-style: none;
   }
 
   .lg\:bg-\[url\(\'\.\/images\/image-hero-desktop\.jpg\'\)\]{

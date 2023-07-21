@@ -10,6 +10,9 @@ module.exports = {
         text: "hsl(0, 0%, 48%)",
       },
     },
+    fontFamily: {
+      'default': "Commissioner, sans-serif",
+    }
   },
   plugins: [],
 }

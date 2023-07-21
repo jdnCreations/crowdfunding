@@ -4,22 +4,3 @@
 @tailwind components;
 @tailwind utilities;
 
-body, * {
-    font-family: 'Commissioner', sans-serif;
-    font-size: 1rem;
-    @apply text-text;
-}
-
-.btn-default {
-    @apply bg-primary;
-    @apply text-white;
-    @apply font-medium;
-    @apply rounded-full;
-    @apply px-8;
-    @apply py-3;
-}
-
-.disabled {
-    @apply bg-text;
-    cursor: default;
-}

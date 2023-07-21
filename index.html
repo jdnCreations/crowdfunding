@@ -11,10 +11,10 @@
   <link rel="stylesheet" href="output.css">
   <script src="index.js" defer></script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50 font-default text-base text-text">
   
   <header class="h-[300px] lg:h-[400px] relative bg-[url('./images/image-hero-mobile.jpg')] lg:bg-[url('./images/image-hero-desktop.jpg')] bg-cover w-full">
-    <nav class=" z-[999] min-h-[80px] h-[80px] mx-5 py-4 flex justify-between items-center w-[calc(100%-2.5rem)] relative">
+    <nav class="z-[999] min-h-[80px] h-[80px] mx-5 py-4 lg:px-36 flex justify-between items-center w-[calc(100%-2.5rem)] relative">
 
       <a href="#" class="font-bold text-white text-3xl">crowdfund</a>
 
@@ -44,9 +44,14 @@
           <p class="text-text text-sm lg:text-lg leading-6">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
         </div>
         <div class="flex justify-between gap-2 h-14">
-          <button class="btn-default w-full sm:w-auto">Back this project</button>
-          <button class="bg-gray-200 rounded-full flex items-center gap-2 font-bold text-text">
-            <img class="min-w-[56px] aspect-square" src="./images/icon-bookmark.svg" alt="bookmark icon">
+          <button class=" bg-primary text-white rounded-full px-8 py-3 font-medium w-full sm:w-auto hover:bg-accent">Back this project</button>
+          <button id="bookmark-btn" class="bg-gray-100 rounded-full flex items-center gap-2 font-bold" data-bookmarked="false">
+            <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+              <g fill="none" fill-rule="evenodd">
+                <circle fill="#2F2F2F" cx="28" cy="28" r="28"/>
+                <path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/>
+              </g>
+            </svg>
             <p class="pl-2 pr-8 hidden sm:flex">Bookmark</p>
           </button>
         </div>
@@ -106,7 +111,7 @@
           </p>
           <div class="flex justify-between flex-col lg:flex-row gap-4 lg:gap-0">
             <p class="flex gap-2 items-center"><span class="font-bold text-black text-3xl">101</span> left</p>
-            <button class="btn-default text-sm w-[10rem]">Select Reward</button>
+            <button class="bg-primary hover:bg-accent text-white rounded-full px-8 py-3 font-medium text-sm w-[10rem]">Select Reward</button>
           </div>
         </div>
 
@@ -121,7 +126,7 @@
           </p>
           <div class="flex justify-between flex-col lg:flex-row gap-4 lg:gap-0">
             <p class="flex gap-2 items-center"><span class="font-bold text-black text-3xl">64</span> left</p>
-            <button class="btn-default text-sm w-[10rem]">Select Reward</button>
+            <button class="bg-primary hover:bg-accent text-white rounded-full px-8 py-3 font-medium text-sm w-[10rem]">Select Reward</button>
           </div>
         </div>
 
@@ -136,7 +141,7 @@
           </p>
           <div class="flex justify-between flex-col lg:flex-row gap-4 lg:gap-0">
             <p class="flex gap-2 items-center"><span class="font-bold text-black text-3xl">0</span> left</p>
-            <button class="btn-default disabled text-sm w-[10rem]">Out of Stock</button>
+            <button class="rounded-full text-white px-8 py-3 bg-text text-sm w-[10rem]">Out of Stock</button>
           </div>
         </div>
     </div>

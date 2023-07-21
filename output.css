@@ -572,14 +572,6 @@ video {
   top: 80px;
 }
 
-.right-0{
-  right: 0px;
-}
-
-.left-auto{
-  left: auto;
-}
-
 .z-10{
   z-index: 10;
 }
@@ -613,10 +605,6 @@ video {
 
 .hidden{
   display: none;
-}
-
-.aspect-square{
-  aspect-ratio: 1 / 1;
 }
 
 .h-1{
@@ -667,24 +655,12 @@ video {
   width: 70%;
 }
 
-.w-\[calc\(100\%-1\.25rem\)\]{
-  width: calc(100% - 1.25rem);
-}
-
 .w-\[calc\(100\%-2\.5rem\)\]{
   width: calc(100% - 2.5rem);
 }
 
 .w-full{
   width: 100%;
-}
-
-.w-\[calc\(100\%\)\]{
-  width: calc(100%);
-}
-
-.min-w-\[56px\]{
-  min-width: 56px;
 }
 
 .max-w-\[44rem\]{
@@ -756,6 +732,11 @@ video {
   background-color: rgb(0 0 0 / 0.5);
 }
 
+.bg-gray-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+
 .bg-gray-200{
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -769,6 +750,11 @@ video {
 .bg-primary{
   --tw-bg-opacity: 1;
   background-color: hsl(176 50% 47% / var(--tw-bg-opacity));
+}
+
+.bg-text{
+  --tw-bg-opacity: 1;
+  background-color: hsl(0 0% 48% / var(--tw-bg-opacity));
 }
 
 .bg-white{
@@ -793,9 +779,19 @@ video {
   padding-right: 1.5rem;
 }
 
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .py-10{
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .py-4{
@@ -844,6 +840,10 @@ video {
   text-align: center;
 }
 
+.font-default{
+  font-family: Commissioner, sans-serif;
+}
+
 .text-2xl{
   font-size: 1.5rem;
   line-height: 2rem;
@@ -852,6 +852,11 @@ video {
 .text-3xl{
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-base{
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
 .text-sm{
@@ -918,30 +923,9 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body, * {
-  font-family: 'Commissioner', sans-serif;
-  font-size: 1rem;
-  --tw-text-opacity: 1;
-  color: hsl(0 0% 48% / var(--tw-text-opacity));
-}
-
-.btn-default{
+.hover\:bg-accent:hover{
   --tw-bg-opacity: 1;
-  background-color: hsl(176 50% 47% / var(--tw-bg-opacity));
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-  font-weight: 500;
-  border-radius: 9999px;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-}
-
-.disabled{
-  --tw-bg-opacity: 1;
-  background-color: hsl(0 0% 48% / var(--tw-bg-opacity));
-  cursor: default;
+  background-color: hsl(176 72% 28% / var(--tw-bg-opacity));
 }
 
 @media (min-width: 640px){
@@ -955,32 +939,20 @@ body, * {
 }
 
 @media (min-width: 768px){
-  .md\:static{
-    position: static;
-  }
-
   .md\:relative{
     position: relative;
-  }
-
-  .md\:left-0{
-    left: 0px;
-  }
-
-  .md\:top-0{
-    top: 0px;
-  }
-
-  .md\:right-0{
-    right: 0px;
   }
 
   .md\:left-auto{
     left: auto;
   }
 
-  .md\:right-8{
-    right: 2rem;
+  .md\:right-0{
+    right: 0px;
+  }
+
+  .md\:top-0{
+    top: 0px;
   }
 
   .md\:mx-0{
@@ -1004,28 +976,12 @@ body, * {
     flex-direction: row;
   }
 
-  .md\:items-start{
-    align-items: flex-start;
-  }
-
-  .md\:items-end{
-    align-items: flex-end;
-  }
-
   .md\:items-center{
     align-items: center;
   }
 
   .md\:justify-normal{
     justify-content: normal;
-  }
-
-  .md\:justify-between{
-    justify-content: space-between;
-  }
-
-  .md\:justify-evenly{
-    justify-content: space-evenly;
   }
 
   .md\:border-none{
@@ -1075,12 +1031,13 @@ body, * {
     border-right-width: 2px;
   }
 
-  .lg\:border-none{
-    border-style: none;
-  }
-
   .lg\:bg-\[url\(\'\.\/images\/image-hero-desktop\.jpg\'\)\]{
     background-image: url('./images/image-hero-desktop.jpg');
+  }
+
+  .lg\:px-36{
+    padding-left: 9rem;
+    padding-right: 9rem;
   }
 
   .lg\:px-8{
@@ -1124,3 +1081,4 @@ body, * {
     line-height: 1.75rem;
   }
 }
+

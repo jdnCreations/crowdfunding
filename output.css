@@ -536,12 +536,20 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
 
 .relative{
   position: relative;
+}
+
+.-left-\[calc\(100\%\+2\.5rem\)\]{
+  left: calc(calc(100% + 2.5rem) * -1);
 }
 
 .-top-12{
@@ -552,9 +560,43 @@ video {
   top: -2rem;
 }
 
-.mx-4{
-  margin-left: 1rem;
-  margin-right: 1rem;
+.left-0{
+  left: 0px;
+}
+
+.top-0{
+  top: 0px;
+}
+
+.top-\[80px\]{
+  top: 80px;
+}
+
+.z-10{
+  z-index: 10;
+}
+
+.z-\[999\]{
+  z-index: 999;
+}
+
+.mx-5{
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-1{
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.block{
+  display: block;
 }
 
 .flex{
@@ -569,32 +611,36 @@ video {
   aspect-ratio: 1 / 1;
 }
 
-.h-3{
-  height: 0.75rem;
-}
-
-.h-\[400px\]{
-  height: 400px;
-}
-
-.h-\[300px\]{
-  height: 300px;
-}
-
-.h-8{
-  height: 2rem;
-}
-
-.h-12{
-  height: 3rem;
+.h-1{
+  height: 0.25rem;
 }
 
 .h-14{
   height: 3.5rem;
 }
 
-.h-full{
+.h-3{
+  height: 0.75rem;
+}
+
+.h-\[100\%\]{
   height: 100%;
+}
+
+.h-\[300px\]{
+  height: 300px;
+}
+
+.h-\[80px\]{
+  height: 80px;
+}
+
+.min-h-\[80px\]{
+  min-height: 80px;
+}
+
+.w-6{
+  width: 1.5rem;
 }
 
 .w-\[100\%\]{
@@ -613,12 +659,20 @@ video {
   width: 70%;
 }
 
+.w-\[calc\(100\%-1\.25rem\)\]{
+  width: calc(100% - 1.25rem);
+}
+
+.w-\[calc\(100\%-2\.5rem\)\]{
+  width: calc(100% - 2.5rem);
+}
+
 .w-full{
   width: 100%;
 }
 
-.w-14{
-  width: 3.5rem;
+.w-\[calc\(100\%\)\]{
+  width: calc(100%);
 }
 
 .min-w-\[56px\]{
@@ -627,6 +681,10 @@ video {
 
 .max-w-\[44rem\]{
   max-width: 44rem;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .flex-col{
@@ -661,10 +719,6 @@ video {
   gap: 1.5rem;
 }
 
-.gap-3{
-  gap: 0.75rem;
-}
-
 .rounded-full{
   border-radius: 9999px;
 }
@@ -677,6 +731,10 @@ video {
   border-width: 1px;
 }
 
+.border-b{
+  border-bottom-width: 1px;
+}
+
 .border-b-2{
   border-bottom-width: 2px;
 }
@@ -686,14 +744,18 @@ video {
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
 }
 
-.bg-gray-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+.bg-black\/50{
+  background-color: rgb(0 0 0 / 0.5);
 }
 
 .bg-gray-200{
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
+.bg-gray-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .bg-primary{
@@ -706,13 +768,16 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gray-50{
-  --tw-bg-opacity: 1;
-  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+.bg-\[url\(\'\.\/images\/image-hero-mobile\.jpg\'\)\]{
+  background-image: url('./images/image-hero-mobile.jpg');
 }
 
 .bg-cover{
   background-size: cover;
+}
+
+.p-4{
+  padding: 1rem;
 }
 
 .px-6{
@@ -720,19 +785,23 @@ video {
   padding-right: 1.5rem;
 }
 
-.px-8{
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
 .py-10{
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
 }
 
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.pb-2{
+  padding-bottom: 0.5rem;
 }
 
 .pb-3{
@@ -759,12 +828,8 @@ video {
   padding-right: 2rem;
 }
 
-.pb-2{
-  padding-bottom: 0.5rem;
-}
-
-.pb-1{
-  padding-bottom: 0.25rem;
+.text-left{
+  text-align: left;
 }
 
 .text-center{
@@ -831,15 +896,25 @@ video {
   opacity: 0.5;
 }
 
+.transition-all{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300{
+  transition-duration: 300ms;
+}
+
+.ease-in-out{
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 body, * {
   font-family: 'Commissioner', sans-serif;
   font-size: 1rem;
   --tw-text-opacity: 1;
   color: hsl(0 0% 48% / var(--tw-text-opacity));
-}
-
-header {
-  background-image: url('./images/image-hero-mobile.jpg');
 }
 
 .btn-default{
@@ -861,25 +936,36 @@ header {
   cursor: default;
 }
 
-@media (min-width: 768px){
-  .md\:flex{
+@media (min-width: 640px){
+  .sm\:flex{
     display: flex;
   }
 
-  .md\:w-auto{
+  .sm\:w-auto{
     width: auto;
   }
 }
 
+@media (min-width: 768px){
+  .md\:relative{
+    position: relative;
+  }
+
+  .md\:flex{
+    display: flex;
+  }
+
+  .md\:hidden{
+    display: none;
+  }
+
+  .md\:text-white{
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
 @media (min-width: 1024px){
-  .lg\:visible{
-    visibility: visible;
-  }
-
-  .lg\:block{
-    display: block;
-  }
-
   .lg\:grid{
     display: grid;
   }
@@ -892,20 +978,8 @@ header {
     height: 400px;
   }
 
-  .lg\:w-auto{
-    width: auto;
-  }
-
   .lg\:grid-cols-3{
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .lg\:grid-rows-1{
-    grid-template-rows: repeat(1, minmax(0, 1fr));
-  }
-
-  .lg\:grid-rows-3{
-    grid-template-rows: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:flex-row{
@@ -924,14 +998,6 @@ header {
     border-right-width: 2px;
   }
 
-  .lg\:border-b-0{
-    border-bottom-width: 0px;
-  }
-
-  .lg\:border-none{
-    border-style: none;
-  }
-
   .lg\:bg-\[url\(\'\.\/images\/image-hero-desktop\.jpg\'\)\]{
     background-image: url('./images/image-hero-desktop.jpg');
   }
@@ -941,28 +1007,8 @@ header {
     padding-right: 2rem;
   }
 
-  .lg\:pl-6{
-    padding-left: 1.5rem;
-  }
-
-  .lg\:pr-6{
-    padding-right: 1.5rem;
-  }
-
   .lg\:pb-0{
     padding-bottom: 0px;
-  }
-
-  .lg\:pr-4{
-    padding-right: 1rem;
-  }
-
-  .lg\:pr-8{
-    padding-right: 2rem;
-  }
-
-  .lg\:pl-8{
-    padding-left: 2rem;
   }
 
   .lg\:pl-10{
@@ -978,11 +1024,6 @@ header {
     line-height: 2.25rem;
   }
 
-  .lg\:text-xl{
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
   .lg\:text-base{
     font-size: 1rem;
     line-height: 1.5rem;
@@ -990,6 +1031,11 @@ header {
 
   .lg\:text-lg{
     font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .lg\:text-xl{
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 

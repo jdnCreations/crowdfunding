@@ -10,10 +10,6 @@ body, * {
     @apply text-text;
 }
 
-header {
-    background-image: url('./images/image-hero-mobile.jpg');
-}
-
 .btn-default {
     @apply bg-primary;
     @apply text-white;

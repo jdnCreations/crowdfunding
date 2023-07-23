@@ -148,7 +148,7 @@
   </main>
   
   <!-- Selection modal start -->
-  <div id="back-modal" class="hidden absolute top-24 right-0 left-0 bg-white z-[999] flex-col border rounded-md border-gray-200 px-6 lg:px-8 py-10 w-[100%-1.25rem] gap-6 mx-5 max-w-[44rem]">
+  <div id="back-modal" class="hidden absolute top-24 right-0 left-0 bg-white z-[999] flex-col border rounded-md border-gray-200 px-6 lg:px-8 py-6 w-[100%-1.25rem] gap-6 mx-5 max-w-[44rem]">
     <div class="flex flex-col">
       <div class="flex justify-between items-center pb-4">
         <p class="text-xl text-black font-bold">Back this project</p>
@@ -159,7 +159,7 @@
 
     <div class="border rounded-md p-6 focus-within:border-2 focus-within:border-primary">
       <div class="flex gap-4 pb-6 items-center">
-        <input type="radio" 
+        <input type="radio" name="pledge" 
         class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
         before:scale-0 before:w-6 before:h-6 before:bg-primary
         checked:before:rounded-full checked:before:scale-[.5]">
@@ -169,11 +169,16 @@
         Choose to support us without a reward if you simply believe in our project. As a backer,
         you will be signed up to receive product updates via email.
       </p>
+      <div class="hidden pledge">
+        <p>Enter your pledge</p>
+        <input type="text">$25</input>
+        <button>Continue</button>
+      </div>
     </div>
 
     <div class="border rounded-md p-6 focus-within:border-2 focus-within:border-primary">
       <div class="flex gap-4 pb-6 items-center">
-        <input type="radio" name="" id="" class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
+        <input type="radio" name="pledge" id="" class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
         before:scale-0 before:w-6 before:h-6 before:bg-primary
         checked:before:rounded-full checked:before:scale-[.5]">
         <div class="flex flex-col">
@@ -186,7 +191,7 @@
         you’ll be added to a special Backer member list.
       </p>
       <p class="pt-6 flex items-center gap-2"><span class="font-bold text-black text-lg">101</span> left</p>
-      <div class="hidden">
+      <div class="hidden pledge">
         <p>Enter your pledge</p>
         <input type="text">$25</input>
         <button>Continue</button>
@@ -194,7 +199,7 @@
     </div>
     <div class="border rounded-md p-6 focus-within:border-2 focus-within:border-primary">
       <div class="flex gap-4 pb-6 items-center">
-        <input type="radio" name="" id="" class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
+        <input type="radio" name="pledge" id="" class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
         before:scale-0 before:w-6 before:h-6 before:bg-primary
         checked:before:rounded-full checked:before:scale-[.5]">
         <div class="flex flex-col">
@@ -210,7 +215,7 @@
         <span class="font-bold text-black text-lg">64</span>
          left
       </p>
-      <div class="hidden">
+      <div class="hidden pledge">
         <p>Enter your pledge</p>
         <input type="text">$75</input>
         <button>Continue</button>

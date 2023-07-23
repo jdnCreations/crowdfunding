@@ -14,12 +14,31 @@ const backProjectModal = document.getElementById('back-modal');
 const nav = document.querySelector('nav');
 const closeBackProjectBtn = document.getElementById('close-back-modal');
 
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+const pledgeAreas = document.querySelectorAll('.pledge');
+
+console.log(radioButtons);
+console.log(pledgeAreas);
+
 const totalFunded = document.getElementById('total');
 
 const primaryColor = "hsl(176, 50%, 47%)";
 const accentColor = "hsl(176, 72%, 28%)";
 
 let backers = 5007;
+
+for (let i = 0; i < radioButtons.length; i++) {
+  radioButtons[i].addEventListener('click', () => {
+    if (radioButtons[i].checked) {
+      pledgeAreas[i].classList.remove('hidden');
+      for (let j = 0; j < radioButtons.length; j++) {
+        if (j !== i) {
+          pledgeAreas[j].classList.add('hidden');
+        }
+      }
+    }
+  })
+}
 
 closeBackProjectBtn.addEventListener('click', () => {
   cover.classList.toggle('md:hidden');

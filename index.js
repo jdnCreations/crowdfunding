@@ -152,7 +152,7 @@ bookmarkBtn.addEventListener('click', () => {
     circle.classList.remove('fill-accent');
     circle.classList.add('fill-[#2f2f2f]')
     bookmarkBtn.querySelector('g>path').setAttribute('fill', '#B1B1B1');
-    bookmarkBtn.classList.remove('text-accent');
+    bookmarkBtn.classList.toggle('text-accent');
     bookmarkBtn.classList.add('text-text');
     bookmarkText.innerHTML = "Bookmark";
     return;
@@ -166,6 +166,7 @@ bookmarkBtn.addEventListener('click', () => {
   // change svg bookmark color
   bookmarkBtn.querySelector('g>path').setAttribute('fill', '#FFF');
   // change button text color
+  bookmarkBtn.classList.remove('text-text');
   bookmarkBtn.classList.add('text-accent');
   // change text to 'bookmarked'
   bookmarkText.innerHTML = 'Bookmarked';

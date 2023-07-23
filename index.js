@@ -9,6 +9,10 @@ const bookmarkBtn = document.getElementById('bookmark-btn');
 const bookmarkText = bookmarkBtn.querySelector('p');
 const bookmarkSvg = bookmarkBtn.querySelector('svg');
 const circle = bookmarkBtn.querySelector('g>circle');
+const backProjectBtn = document.getElementById('back-project');
+const backProjectModal = document.getElementById('back-modal');
+const nav = document.querySelector('nav');
+const closeBackProjectBtn = document.getElementById('close-back-modal');
 
 const totalFunded = document.getElementById('total');
 
@@ -17,6 +21,26 @@ const accentColor = "hsl(176, 72%, 28%)";
 
 let backers = 5007;
 
+closeBackProjectBtn.addEventListener('click', () => {
+  cover.classList.toggle('md:hidden');
+  backProjectModal.classList.toggle('hidden');
+  cover.classList.toggle('hidden');
+})
+
+// back this project
+backProjectBtn.addEventListener('click', () => {
+  cover.classList.toggle('md:hidden');
+  // overlay page with dark bg
+  cover.classList.toggle('hidden');
+  nav.classList.toggle('z-[999]');
+
+  // open back this project modal
+  backProjectModal.classList.add('flex');
+  backProjectModal.classList.toggle('hidden');
+
+})
+
+// bookmark functionality
 bookmarkBtn.addEventListener('click', () => {
   if (bookmarkBtn.getAttribute('data-bookmarked') === 'true') {
     bookmarkBtn.setAttribute('data-bookmarked', 'false');
@@ -42,8 +66,10 @@ bookmarkBtn.addEventListener('click', () => {
   bookmarkText.innerHTML = 'Bookmarked';
 })
 
+// hamburger functionality
 hamburger.addEventListener('click', () => {
     // overlay page with dark bg
+    nav.classList.add('z-[999]');
     cover.classList.toggle('hidden');
     navMenu.classList.toggle('-left-[calc(100%+2.5rem)]')
 

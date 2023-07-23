@@ -11,14 +11,20 @@ const bookmarkSvg = bookmarkBtn.querySelector('svg');
 const circle = bookmarkBtn.querySelector('g>circle');
 const backProjectBtn = document.getElementById('back-project');
 const backProjectModal = document.getElementById('back-modal');
+const thanksModal = document.getElementById('thanks-modal');
 const nav = document.querySelector('nav');
 const closeBackProjectBtn = document.getElementById('close-back-modal');
+const progressBar = document.getElementById('progress-bar');
+const progress = document.getElementById('progress');
 
-const radioButtons = document.querySelectorAll('input[type="radio"]');
+const totalBackedText = document.getElementById('total');
+const backersText = document.getElementById('backers');
+
+const radioButtons = document.querySelectorAll('.stocked');
 const pledgeAreas = document.querySelectorAll('.pledge');
+const pledgeContinueBtns = document.querySelectorAll('.pledge button');
 
-console.log(radioButtons);
-console.log(pledgeAreas);
+const gotItBtn = document.getElementById('got-it');
 
 const totalFunded = document.getElementById('total');
 
@@ -27,6 +33,86 @@ const accentColor = "hsl(176, 72%, 28%)";
 
 let backers = 5007;
 
+let total;
+let prevWidth;
+let pageLoaded = false;
+
+window.onload = () => {
+  if (pageLoaded == false) {
+    total = parseFloat(totalBackedText.innerHTML.replace('$', '').replace(',', ''));
+    let goal = 100000;
+  
+    const progressWidth = total / goal;
+    const progressPercent = (progressWidth * 100);
+
+    console.log(`setting width to ${progressPercent}`);
+
+    progress.style.width = `${progressPercent}%`;
+    pageLoaded = true;
+  }
+}
+
+// event listener for got it button
+gotItBtn.addEventListener('click', () => {
+  // close thanks modal
+  thanksModal.classList.add('hidden');
+
+  // remove cover from bg
+  cover.classList.add('md:hidden');
+  cover.classList.add('hidden');
+  
+})
+
+function calculateTotal(amount) {
+  backers++;
+  backersText.innerHTML = backers;
+
+  const newTotal = total + amount;
+  totalBackedText.innerHTML = `$${newTotal.toLocaleString()}`;
+
+  total = parseFloat(totalBackedText.innerHTML.replace('$', '').replace(',', ''));
+  let goal = 100000;
+
+
+  const progressWidth = total / goal;
+  console.log(progressWidth);
+  const progressPercent = (progressWidth * 100);
+
+  console.log(`setting width to ${progressPercent}`);
+
+  if (progressPercent >= 100) {
+    console.log('GOAL HIT!');
+    progress.style.width = "100%";
+  }
+
+  prevWidth = progressPercent;
+
+  progress.style.width = `${progressPercent}%`;
+}
+
+// add event listeners to pledge continue buttons
+for (let i = 0; i < pledgeContinueBtns.length; i++) {
+  pledgeContinueBtns[i].addEventListener('click', () => {
+    let total = parseFloat(totalBackedText.innerHTML.replace('$', '').replace(',', ''));
+    console.log(total);
+    const parent = pledgeContinueBtns[i].parentElement;
+    const childDiv = parent.children[0];
+    const input = childDiv.children[1];
+
+    const amount = parseFloat(input.value);
+
+    // show thanks modal
+    cover.classList.remove('md:hidden');
+    cover.classList.remove('hidden');
+    thanksModal.classList.remove('hidden');
+    // hide back modal
+    backProjectModal.classList.add('hidden');
+
+    calculateTotal(amount);
+  });
+}
+
+// and event listeners to pledge radio buttons
 for (let i = 0; i < radioButtons.length; i++) {
   radioButtons[i].addEventListener('click', () => {
     if (radioButtons[i].checked) {

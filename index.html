@@ -69,7 +69,7 @@
 
           <div class="flex flex-col items-center text-center lg:text-left lg:items-start lg:border-r-2 lg:pl-10">
             <p class="flex flex-col gap-1 text-text text-sm font-medium   lg:pb-0 pb-4">
-              <span class="font-extrabold text-black text-3xl">5,007</span> total backers
+              <span id="backers" class="font-extrabold text-black text-3xl">5,007</span> total backers
             </p>
             <div class="border-b-2 w-[5rem] lg:hidden"></div>
           </div>
@@ -79,8 +79,8 @@
             <div class="w-[5rem]"></div>
           </div>
         </div>
-        <div class="w-[100%] bg-gray-200 h-3 rounded-full">
-          <div class="w-[70%] bg-primary h-3 rounded-full"></div>
+        <div id="progress-bar" class="w-[100%] bg-gray-200 h-3 rounded-full">
+          <div id="progress" class="transition-all bg-primary h-3 rounded-full" style="width: 0%;"></div>
         </div>
       </div>
       
@@ -157,69 +157,98 @@
       <p class="text-sm">Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
     </div>
 
-    <div class="border rounded-md p-6 focus-within:border-2 focus-within:border-primary">
-      <div class="flex gap-4 pb-6 items-center">
-        <input type="radio" name="pledge" 
-        class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
-        before:scale-0 before:w-6 before:h-6 before:bg-primary
-        checked:before:rounded-full checked:before:scale-[.5]">
-        <p class="font-bold text-black text-sm">Pledge with no reward</p>
+    <div class="border rounded-md focus-within:border-2 focus-within:border-primary">
+      <div class="p-6">
+        <div class="flex gap-4 pb-6 items-center">
+          <input type="radio" name="pledge" 
+          class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
+          before:scale-0 before:w-6 before:h-6 before:bg-primary
+          checked:before:rounded-full checked:before:scale-[.5] stocked">
+          <p class="font-bold text-black text-sm">Pledge with no reward</p>
+        </div>
+        <p class="text-sm">
+          Choose to support us without a reward if you simply believe in our project. As a backer,
+          you will be signed up to receive product updates via email.
+        </p>
       </div>
-      <p class="text-sm">
-        Choose to support us without a reward if you simply believe in our project. As a backer,
-        you will be signed up to receive product updates via email.
-      </p>
-      <div class="hidden pledge">
-        <p>Enter your pledge</p>
-        <input type="text">$25</input>
-        <button>Continue</button>
+      <div class="hidden pledge border border-t-gray-200 p-6 flex flex-col gap-3 items-center">
+        <p class="text-sm pb-2 font-medium">Enter your pledge</p>
+        <div class="flex justify-between gap-3 overflow-hidden">
+
+          <div class="flex items-center gap-2 text-sm border-2 border-gray-200 px-6 w-full rounded-full ">
+            <span class="text-sm font-bold text-gray-300">$</span>
+            <input class="outline-none appearance-none w-full placeholder:font-medium text-black font-bold" type="text" defaultValue="5" placeholder="5">
+          </div>
+
+          <button class="text-sm bg-primary text-white px-6 py-3 rounded-full font-medium">Continue</button>
+
+        </div>
       </div>
     </div>
 
-    <div class="border rounded-md p-6 focus-within:border-2 focus-within:border-primary">
-      <div class="flex gap-4 pb-6 items-center">
-        <input type="radio" name="pledge" id="" class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
-        before:scale-0 before:w-6 before:h-6 before:bg-primary
-        checked:before:rounded-full checked:before:scale-[.5]">
-        <div class="flex flex-col">
-          <p class="font-bold text-black text-sm">Bamboo Stand</p>
-          <p class="text-primary text-sm font-medium">Pledge $25 or more</p>
+    <div class="border rounded-md focus-within:border-2 focus-within:border-primary">
+      <div class="p-6">
+        <div class="flex gap-4 pb-6 items-center">
+          <input type="radio" name="pledge" id="" class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
+          before:scale-0 before:w-6 before:h-6 before:bg-primary
+          checked:before:rounded-full checked:before:scale-[.5] stocked">
+          <div class="flex flex-col">
+            <p class="font-bold text-black text-sm">Bamboo Stand</p>
+            <p class="text-primary text-sm font-medium">Pledge $25 or more</p>
+          </div>
         </div>
+        <p class="text-sm">
+          You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
+          you’ll be added to a special Backer member list.
+        </p>
+        <p class="pt-6 flex items-center gap-2"><span class="font-bold text-black text-lg">101</span> left</p>
       </div>
-      <p class="text-sm">
-        You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
-        you’ll be added to a special Backer member list.
-      </p>
-      <p class="pt-6 flex items-center gap-2"><span class="font-bold text-black text-lg">101</span> left</p>
-      <div class="hidden pledge">
-        <p>Enter your pledge</p>
-        <input type="text">$25</input>
-        <button>Continue</button>
+      
+      <div class="hidden pledge border border-t-gray-200 p-6 flex flex-col gap-3 items-center">
+        <p class="text-sm pb-2 font-medium">Enter your pledge</p>
+        <div class="flex justify-between gap-3 overflow-hidden">
+          <div class="flex items-center gap-2 text-sm border-2 border-gray-200 px-6 w-full rounded-full ">
+            <span class="text-sm font-bold text-gray-300">$</span>
+            <input class="outline-none appearance-none w-full placeholder:font-medium text-black font-bold" type="text" defaultValue="25" placeholder="25">
+          </div>
+          <button class="text-sm bg-primary text-white px-6 py-3 rounded-full font-medium">Continue</button>
+        </div>
       </div>
     </div>
-    <div class="border rounded-md p-6 focus-within:border-2 focus-within:border-primary">
-      <div class="flex gap-4 pb-6 items-center">
-        <input type="radio" name="pledge" id="" class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
-        before:scale-0 before:w-6 before:h-6 before:bg-primary
-        checked:before:rounded-full checked:before:scale-[.5]">
-        <div class="flex flex-col">
-          <p class="font-bold text-black text-sm">Black Edition Stand</p>
-          <p class="text-primary text-sm font-medium">Pledge $75 or more</p>
+
+
+    <div class="border rounded-md focus-within:border-2 focus-within:border-primary">
+      <div class="p-6">
+        <div class="flex gap-4 pb-6 items-center">
+          <input type="radio" name="pledge" id="" class="flex items-center justify-center h-6 w-6 appearance-none border rounded-full border-gray-200 
+          before:scale-0 before:w-6 before:h-6 before:bg-primary
+          checked:before:rounded-full checked:before:scale-[.5] stocked">
+          <div class="flex flex-col">
+            <p class="font-bold text-black text-sm">Black Edition Stand</p>
+            <p class="text-primary text-sm font-medium">Pledge $75 or more</p>
+          </div>
+        </div>
+        <p class="text-sm">
+          You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
+          member list. Shipping is included.
+        </p>
+        <p class="pt-6 flex items-center gap-2">
+          <span class="font-bold text-black text-lg">64</span>
+           left
+        </p>
+      </div>
+
+      <div class="hidden pledge border border-t-gray-200 p-6 flex flex-col gap-3 items-center">
+        <p class="text-sm pb-2 font-medium">Enter your pledge</p>
+        <div class="flex justify-between gap-3 overflow-hidden">
+          <div class="flex items-center gap-2 text-sm border-2 border-gray-200 px-6 w-full rounded-full ">
+            <span class="text-sm font-bold text-gray-300">$</span>
+            <input class="outline-none appearance-none w-full placeholder:font-medium text-black font-bold" type="text" defaultValue="75" placeholder="75">
+          </div>
+          <button class="text-sm bg-primary text-white px-6 py-3 rounded-full font-medium">Continue</button>
         </div>
       </div>
-      <p class="text-sm">
-        You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
-        member list. Shipping is included.
-      </p>
-      <p class="pt-6 flex items-center gap-2">
-        <span class="font-bold text-black text-lg">64</span>
-         left
-      </p>
-      <div class="hidden pledge">
-        <p>Enter your pledge</p>
-        <input type="text">$75</input>
-        <button>Continue</button>
-      </div>
+
     </div>
     <div class="border rounded-md p-6 opacity-50">
       <div class="flex gap-4 pb-6 items-center">
@@ -247,14 +276,16 @@
 
   <!-- MODAL -->
 
-  <!-- <div>
-    <p>Thanks for your support!</p>
-    <p>
+  <div id="thanks-modal" class="hidden flex flex-col absolute top-[50%] mx-5 px-6 py-8 translate-y-[-50%] z-[999] bg-white border-md items-center gap-6 rounded-md">
+
+    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#3CB3AB" cx="32" cy="32" r="32"/><path stroke="#FFF" stroke-width="5" d="M20 31.86L28.093 40 44 24"/></g></svg>
+    <p class="font-bold text-black text-lg">Thanks for your support!</p>
+    <p class="text-sm text-center">
       Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
       an email once our campaign is completed.
     </p>
-    <button>Got it!</button>
-  </div> -->
+    <button id="got-it" class="bg-primary text-white font-medium px-8 py-3 text-sm rounded-full w-auto">Got it!</button>
+  </div>
 
   <!-- Success modal end -->
   <div id="cover" class="hidden md:hidden z-10 fixed top-0 left-0 w-[100%] h-[100%] bg-black/50"></div>

@@ -584,6 +584,18 @@ video {
   top: 80px;
 }
 
+.left-\[50\%\]{
+  left: 50%;
+}
+
+.top-\[25\%\]{
+  top: 25%;
+}
+
+.top-\[15\%\]{
+  top: 15%;
+}
+
 .z-10{
   z-index: 10;
 }
@@ -731,6 +743,16 @@ video {
 
 .translate-y-\[-50\%\]{
   --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-y-\[50\%\]{
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-x-\[50\%\]{
+  --tw-translate-x: -50%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1068,8 +1090,20 @@ video {
   transition-duration: 150ms;
 }
 
+.delay-200{
+  transition-delay: 200ms;
+}
+
 .duration-300{
   transition-duration: 300ms;
+}
+
+.duration-500{
+  transition-duration: 500ms;
+}
+
+.duration-700{
+  transition-duration: 700ms;
 }
 
 .ease-in-out{
@@ -1164,6 +1198,18 @@ video {
     top: 0px;
   }
 
+  .md\:left-\[50\%\]{
+    left: 50%;
+  }
+
+  .md\:top-\[50\%\]{
+    top: 50%;
+  }
+
+  .md\:top-\[70\%\]{
+    top: 70%;
+  }
+
   .md\:mx-0{
     margin-left: 0px;
     margin-right: 0px;
@@ -1179,6 +1225,16 @@ video {
 
   .md\:w-auto{
     width: auto;
+  }
+
+  .md\:-translate-x-\[50\%\]{
+    --tw-translate-x: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .md\:-translate-y-\[50\%\]{
+    --tw-translate-y: -50%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .md\:flex-row{
